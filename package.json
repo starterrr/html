@@ -22,12 +22,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alik0211/starterrr.git"
+    "url": "git+https://github.com/starterrr/html.git"
   },
   "author": "alik0211",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/alik0211/starterrr/issues"
+    "url": "https://github.com/starterrr/html/issues"
   },
-  "homepage": "https://github.com/alik0211/starterrr#readme"
+  "homepage": "https://github.com/starterrr/html#readme"
 }
