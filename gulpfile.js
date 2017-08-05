@@ -7,6 +7,7 @@ const del          = require('del'),
       uglify       = require('gulp-uglify'),
       htmlmin      = require('gulp-htmlmin'),
       cleanCSS     = require('gulp-clean-css'),
+      sourcemaps   = require('gulp-sourcemaps'),
       htmlreplace  = require('gulp-html-replace'),
       browserSync  = require('browser-sync'),
       autoprefixer = require('gulp-autoprefixer');
@@ -35,7 +36,9 @@ gulp.task('serve:dist', ['build'], function() {
 
 gulp.task('sass', function() {
   return gulp.src('app/sass/*.sass')
+    .pipe(sourcemaps.init())
     .pipe(sass()).on('error', notify.onError())
+    .pipe(sourcemaps.write())
     .pipe(autoprefixer(['last 10 versions']))
     .pipe(gulp.dest('app/css'));
 });
