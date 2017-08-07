@@ -38,8 +38,8 @@ gulp.task('sass', function() {
   return gulp.src('app/sass/*.sass')
     .pipe(sourcemaps.init())
     .pipe(sass()).on('error', notify.onError())
-    .pipe(sourcemaps.write())
     .pipe(autoprefixer(['last 10 versions']))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('app/css'));
 });
 
