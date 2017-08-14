@@ -74,6 +74,7 @@ gulp.task('watch', ['sass', 'serve'], function() {
   gulp.watch('app/*.html', reload);
   gulp.watch('app/sass/**/*.sass', ['sass', reload]);
   gulp.watch('app/js/**/*.js', reload);
+  gulp.watch('app/img/**/*', reload);
 });
 
 gulp.task('default', ['watch']);
