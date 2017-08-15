@@ -34,7 +34,7 @@ gulp.task('serve:dist', ['build'], function() {
   });
 });
 
-gulp.task('sass', function() {
+gulp.task('sass:dev', function() {
   return gulp.src('app/sass/*.sass')
     .pipe(sourcemaps.init())
     .pipe(sass()).on('error', notify.onError())
@@ -43,11 +43,19 @@ gulp.task('sass', function() {
     .pipe(gulp.dest('app/css'));
 });
 
+gulp.task('sass:prod', function() {
+  return gulp.src('app/sass/*.sass')
+    .pipe(sass()).on('error', notify.onError())
+    .pipe(autoprefixer(['last 10 versions']))
+    .pipe(cleanCSS({ level: { 1: { specialComments: 0 }}}))
+    .pipe(gulp.dest('app/css'));
+});
+
 gulp.task('clean', function() {
   return del.sync('dist');
 });
 
-gulp.task('build', ['clean', 'sass'], function() {
+gulp.task('build', ['clean', 'sass:prod'], function() {
   gulp.src('app/*.html')
     .pipe(htmlreplace({
       css: 'css/main.min.css',
@@ -57,7 +65,6 @@ gulp.task('build', ['clean', 'sass'], function() {
     .pipe(gulp.dest('dist'));
 
   gulp.src('app/css/*.css')
-    .pipe(cleanCSS({ level: { 1: { specialComments: 0 }}}))
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('dist/css'));
 
@@ -70,9 +77,9 @@ gulp.task('build', ['clean', 'sass'], function() {
   gulp.src('app/img/**/*').pipe(gulp.dest('dist/img'));
 });
 
-gulp.task('watch', ['sass', 'serve'], function() {
+gulp.task('watch', ['sass:dev', 'serve'], function() {
   gulp.watch('app/*.html', reload);
-  gulp.watch('app/sass/**/*.sass', ['sass', reload]);
+  gulp.watch('app/sass/**/*.sass', ['sass:dev', reload]);
   gulp.watch('app/js/**/*.js', reload);
   gulp.watch('app/img/**/*', reload);
 });
