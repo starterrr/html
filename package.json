@@ -1,6 +1,6 @@
 {
   "name": "html-starterrr",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Html Starter Kit",
   "scripts": {
     "start": "gulp watch",
@@ -19,7 +19,7 @@
     "gulp-notify": "^3.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.6.0",
+    "gulp-sourcemaps": "^2.6.1",
     "gulp-uglify": "^3.0.0"
   },
   "repository": {
