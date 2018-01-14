@@ -1,12 +1,13 @@
 {
   "name": "html-starterrr",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Html Starter Kit",
   "scripts": {
     "start": "gulp watch",
     "build": "gulp build"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "browser-sync": "^2.18.12",
     "del": "^3.0.0",
@@ -31,5 +32,6 @@
   "bugs": {
     "url": "https://github.com/starterrr/html/issues"
   },
-  "homepage": "https://github.com/starterrr/html#readme"
+  "homepage": "https://github.com/starterrr/html#readme",
+  "dependencies": {}
 }
