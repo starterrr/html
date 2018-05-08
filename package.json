@@ -1,6 +1,6 @@
 {
   "name": "html-starterrr",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Html Starter Kit",
   "scripts": {
     "start": "gulp watch",
@@ -12,7 +12,7 @@
     "browser-sync": "^2.18.12",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^4.0.0",
+    "gulp-autoprefixer": "^5.0.0",
     "gulp-babel": "^7.0.0",
     "gulp-clean-css": "^3.9.0",
     "gulp-html-replace": "^1.6.2",
