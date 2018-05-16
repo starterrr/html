@@ -1,13 +1,13 @@
 {
   "name": "html-starterrr",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "Html Starter Kit",
   "scripts": {
     "start": "gulp watch",
     "build": "gulp build"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-preset-es2015": "^6.24.1",
     "browser-sync": "^2.18.12",
     "del": "^3.0.0",
